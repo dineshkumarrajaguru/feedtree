@@ -2,29 +2,30 @@ import Tree from 'react-d3-tree';
 
 const FeedTree = () => {
   const sumitNode = {
-    name: 'Sumit',
-    children: [{ name: 'Sofia' }],
+    name: 'Sumit (SE)',
+    children: [{ name: 'Sofia (E)' }],
   };
   const maaluNode = {
-    name: 'Maalu',
+    name: 'Maalu (SE)',
     children: [
       {
         ...sumitNode,
       },
     ],
   };
+  const graceNode = { name: 'Grace (SE)', children: [{ name: 'Neha (E)' }] };
 
   const prajeeshNode = {
-    name: 'Prajeesh',
+    name: 'Prajeesh (SE)',
     children: [
       {
-        name: 'Nithin',
+        ...graceNode,
       },
     ],
   };
 
   const supriyaNode = {
-    name: 'Supriya',
+    name: 'Supriya (APE)',
     children: [
       { ...maaluNode },
       {
@@ -34,16 +35,19 @@ const FeedTree = () => {
   };
 
   const hajnaNode = {
-    name: 'Hajna',
+    name: 'Hajna (SE)',
     children: [
       {
-        name: 'Nagamani',
+        name: 'Nagamani (SE)',
       },
     ],
   };
-  const gowthamNode = { name: 'Gowtham', children: [{ name: 'Vismay' }] };
+  const gowthamNode = {
+    name: 'Gowtham (SE)',
+    children: [{ name: 'Vismay (E)' }],
+  };
   const shinyNode = {
-    name: 'Shiny',
+    name: 'Shiny (LE)',
     children: [
       {
         ...gowthamNode,
@@ -52,7 +56,7 @@ const FeedTree = () => {
   };
 
   const divyaNode = {
-    name: 'Divya S',
+    name: 'Divya S (APE)',
     children: [
       {
         ...hajnaNode,
@@ -63,43 +67,74 @@ const FeedTree = () => {
     ],
   };
 
+  const thejusNode = { name: 'Thejus (SE)', children: [{ name: 'Amal (E)' }] };
+
+  const firozNode = {
+    name: 'Firoz (SE)',
+    children: [
+      {
+        ...thejusNode,
+      },
+    ],
+  };
+
+  const visakhNode = {
+    name: 'Visakh (SE)',
+    children: [{ name: 'Akisha (SE)' }],
+  };
+
+  const arunRajNode = {
+    name: 'ArunRaj (PE)',
+    children: [
+      {
+        ...firozNode,
+      },
+      {
+        ...visakhNode,
+      },
+    ],
+  };
+
   const lekshmiNode = {
-    name: 'Lekshmi',
+    name: 'Lekshmi (A)',
     children: [
       {
         ...supriyaNode,
       },
-      { ...divyaNode },
+      { ...arunRajNode },
     ],
   };
+  const akashNode = {
+    name: 'Akash (SE)',
+    children: [{ name: 'Gayathri (E)' }],
+  };
 
-  const graceNode = { name: 'Grace', children: [{ name: 'Neha' }] };
   const karthikNode = {
-    name: 'Karthik',
+    name: 'Karthik Kannan (SE)',
     children: [
       {
-        ...graceNode,
+        ...akashNode,
       },
     ],
   };
 
   const arjunSurendranNode = {
-    name: 'Arjun Surendran',
-    children: [{ name: 'Nijin' }],
+    name: 'Arjun S (SE)',
+    children: [{ name: 'Nijin (E)' }],
   };
 
   const deepakNode = {
-    name: 'Deepak',
+    name: 'Deepak (SE)',
     children: [
       {
         ...arjunSurendranNode,
       },
-      { name: 'Sraven' },
+      { name: 'Sraven (SE)' },
     ],
   };
 
   const nanduNode = {
-    name: 'Nandu',
+    name: 'Nandu (APE)',
     children: [
       {
         ...karthikNode,
@@ -110,32 +145,41 @@ const FeedTree = () => {
     ],
   };
 
-  const ushaNode = {
-    name: 'Usha',
+  const ajeshNode = {
+    name: 'Ajesh (SE)',
     children: [
       {
-        name: 'Ajesh',
+        name: 'Nithin Prakash (E)',
+      },
+    ],
+  };
+
+  const ushaNode = {
+    name: 'Usha (SE)',
+    children: [
+      {
+        ...ajeshNode,
       },
     ],
   };
 
   const arjunAravindNode = {
-    name: 'Arjun Aravind',
+    name: 'Arjun Aravind (SE)',
     children: [{ name: 'Abhishek' }],
   };
 
   const ajithNode = {
-    name: 'Ajith',
-    children: [{ name: 'Sera' }],
+    name: 'Ajith (SE)',
+    children: [{ name: 'Sera (E)' }],
   };
 
   const vvnNode = {
-    name: 'VVN',
+    name: 'VVN (SE)',
     children: [{ ...arjunAravindNode }, { ...ajithNode }],
   };
 
   const jkNode = {
-    name: 'JK',
+    name: 'JK (APE)',
     children: [
       {
         ...ushaNode,
@@ -147,7 +191,7 @@ const FeedTree = () => {
   };
 
   const vijayNode = {
-    name: 'Vijay',
+    name: 'Vijay (A)',
     children: [
       {
         ...nanduNode,
@@ -158,45 +202,18 @@ const FeedTree = () => {
     ],
   };
 
-  const thejusNode = { name: 'Thejus', children: [{ name: 'Amal' }] };
-  const firozNode = {
-    name: 'Firoz',
-    children: [
-      {
-        ...thejusNode,
-      },
-    ],
-  };
-
-  const visakhNode = {
-    name: 'Visakh',
-    children: [{ name: 'Akisha' }],
-  };
-
-  const arunRajNode = {
-    name: 'ArunRaj',
-    children: [
-      {
-        ...firozNode,
-      },
-      {
-        ...visakhNode,
-      },
-    ],
-  };
-
   const geethuNode = {
-    name: 'Geethu',
-    children: [{ name: 'Ashwin' }],
+    name: 'Geethu (SE)',
+    children: [{ name: 'Ashwin (E)' }],
   };
 
   const saranyaNode = {
-    name: 'Saranya',
-    children: [{ name: 'Akshay' }],
+    name: 'Saranya (SE)',
+    children: [{ name: 'Akshay (E)' }],
   };
 
   const vipinNode = {
-    name: 'Vipin',
+    name: 'Vipin (LE)',
     children: [
       {
         ...geethuNode,
@@ -208,10 +225,10 @@ const FeedTree = () => {
   };
 
   const anilNode = {
-    name: 'Anil',
+    name: 'Anil (PE)',
     children: [
       {
-        ...arunRajNode,
+        ...divyaNode,
       },
       {
         ...vipinNode,
@@ -220,17 +237,17 @@ const FeedTree = () => {
   };
 
   const parvathyNode = {
-    name: 'Parvathy',
-    children: [{ name: 'Ajukrishnan' }],
+    name: 'Parvathy (SE)',
+    children: [{ name: 'Ajukrishnan (E)' }],
   };
 
   const michaelNode = {
-    name: 'Michael',
-    children: [{ name: 'Aromal' }],
+    name: 'Michael (SE)',
+    children: [{ name: 'Aromal (E)' }],
   };
 
   const akhilNode = {
-    name: 'Akhil',
+    name: 'Akhil (LE)',
     children: [
       {
         ...parvathyNode,
@@ -242,17 +259,17 @@ const FeedTree = () => {
   };
 
   const anjanaNode = {
-    name: 'Anjana',
-    children: [{ name: 'Arun Sankar' }],
+    name: 'Anjana (LE)',
+    children: [{ name: 'Arun Sankar (SE)' }],
   };
 
   const georgeNode = {
-    name: 'George',
-    children: [{ name: 'Akash' }],
+    name: 'George (SE)',
+    children: [{ name: 'Rachel (E)' }],
   };
 
   const faizalNode = {
-    name: 'Faizal',
+    name: 'Faizal (LE)',
     children: [
       {
         ...anjanaNode,
@@ -264,7 +281,7 @@ const FeedTree = () => {
   };
 
   const tessyNode = {
-    name: 'Tessy',
+    name: 'Tessy (AA)',
     children: [
       {
         ...akhilNode,
@@ -276,25 +293,28 @@ const FeedTree = () => {
   };
 
   const vishnuNode = {
-    name: 'Vishnu',
+    name: 'Vishnu (LE)',
     children: [
       {
-        name: 'Suraj',
+        name: 'Suraj (SE)',
+      },
+      {
+        name: 'Nithin Peter (SE)',
       },
     ],
   };
 
   const pratheeshNode = {
-    name: 'Pratheesh',
+    name: 'Pratheesh (LE)',
     children: [
       {
-        name: 'Abhijith',
+        name: 'Abhijith (E)',
       },
     ],
   };
 
   const bibhuNode = {
-    name: 'Bibhu',
+    name: 'Bibhu (LE)',
     children: [
       {
         ...vishnuNode,
@@ -304,28 +324,28 @@ const FeedTree = () => {
   };
 
   const shalabhaNode = {
-    name: 'Shalabha',
+    name: 'Shalabha (LE)',
     children: [
       {
-        name: 'Sam',
+        name: 'Sam (SE)',
+      },
+      {
+        name: 'Sanal (E)',
       },
     ],
   };
 
   const nishadNode = {
-    name: 'Nishad',
+    name: 'Nishad (SE)',
     children: [
       {
-        name: 'Sanal',
-      },
-      {
-        name: 'Tom',
+        name: 'Tom (SE)',
       },
     ],
   };
 
   const sabirNode = {
-    name: 'Sabir',
+    name: 'Sabir (LE)',
     children: [
       {
         ...shalabhaNode,
@@ -335,7 +355,7 @@ const FeedTree = () => {
   };
 
   const dineshNode = {
-    name: 'Dinesh',
+    name: 'Dinesh (LE)',
     children: [
       {
         ...bibhuNode,
@@ -347,7 +367,7 @@ const FeedTree = () => {
   };
 
   const nishinNode = {
-    name: 'Nishin',
+    name: 'Nishin (SA)',
     children: [
       {
         ...lekshmiNode,
@@ -364,9 +384,18 @@ const FeedTree = () => {
   };
   const orgChart = { ...nishinNode };
   return (
-    <div id="treeWrapper" style={{ width: '100vw', height: '100vh' }}>
-      <Tree data={orgChart} orientation="vertical" />
-    </div>
+    <>
+      <header style={{ textAlign: 'center' }}>
+        <h1>FEED Tree - React</h1>
+      </header>{' '}
+      <div id="treeWrapper" style={{ width: '99vw', height: '100vh' }}>
+        <Tree
+          data={orgChart}
+          orientation="vertical"
+          nodeSize={{ x: 90, y: 140 }}
+        />
+      </div>
+    </>
   );
 };
 
