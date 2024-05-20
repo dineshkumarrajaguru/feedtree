@@ -84,7 +84,7 @@ const FeedTree = () => {
   };
 
   const arjunSurendranNode = {
-    name: 'Arjun Surendran',
+    name: 'Arjun S',
     children: [{ name: 'Nijin' }],
   };
 
@@ -120,7 +120,7 @@ const FeedTree = () => {
   };
 
   const arjunAravindNode = {
-    name: 'Arjun Aravind',
+    name: 'Arjun A',
     children: [{ name: 'Abhishek' }],
   };
 
@@ -362,10 +362,40 @@ const FeedTree = () => {
       { ...dineshNode },
     ],
   };
+
+  // Here we're using `renderCustomNodeElement` to represent each node
+  // as an SVG `rect` instead of the default `circle`.
+  const renderRectSvgNode = ({ nodeDatum, toggleNode }) => (
+    <g>
+      <rect
+        width="100"
+        height="40"
+        x="-50"
+        y="-20"
+        fill="white"
+        onClick={toggleNode}
+      />
+      <text fill="black" fontSize="13px" strokeWidth="1" x="-25">
+        {nodeDatum.name}
+      </text>
+      <br />
+      {nodeDatum.attributes?.department && (
+        <text fill="black" x="-50" dy="20" strokeWidth="1">
+          Department: {nodeDatum.attributes?.department}
+        </text>
+      )}
+    </g>
+  );
   const orgChart = { ...nishinNode };
   return (
     <div id="treeWrapper" style={{ width: '100vw', height: '100vh' }}>
-      <Tree data={orgChart} orientation="vertical" />
+      <Tree data={orgChart} orientation="vertical"
+        renderCustomNodeElement={renderRectSvgNode}
+        rootNodeClassName="node__root"
+        branchNodeClassName="node__branch"
+        leafNodeClassName="node__leaf"
+        nodeSize={{ x: 80, y: 200 }}
+        translate={{ x: 600, y: 100 }} />
     </div>
   );
 };
