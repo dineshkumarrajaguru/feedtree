@@ -409,7 +409,7 @@ const FeedTree = () => {
             <p style={{ margin: '0' }}>({nodeDatum?.designation})</p>
           </div>
           {nodeDatum.children && (
-            <img onClick={toggleNode} src={nodeDatum.__rd3t.collapsed ? "icons8-expand-48.png" : "icons8-collapse-64.png"} width="24px" height="24px"></img>
+            <img onClick={toggleNode} src={nodeDatum.__rd3t.collapsed ? "plus.png" : "minus.png"} style={{ paddingLeft: '10px' }} width="24px" height="24px"></img>
           )}
         </div>
 
