@@ -402,25 +402,30 @@ const FeedTree = () => {
       />
       <foreignObject fill="grey" fontSize="14px" fontWeight="bold" x="-50"
         y="-20" width="100" height="50" style={{ textAlign: 'center' }}>
-        <p style={{ margin: '0' }}>{nodeDatum.name}</p>
-        <p style={{ margin: '0' }}>({nodeDatum?.designation})</p>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div >
+            <p style={{ margin: '0' }}>{nodeDatum.name}
+            </p>
+            <p style={{ margin: '0' }}>({nodeDatum?.designation})</p>
+          </div>
+          {nodeDatum.children && (
+            <img onClick={toggleNode} src={nodeDatum.__rd3t.collapsed ? "icons8-expand-48.png" : "icons8-collapse-64.png"} width="24px" height="24px"></img>
+          )}
+        </div>
+
       </foreignObject>
 
-    </g>
+    </g >
   );
   const orgChart = { ...nishinNode };
   return (
     <><header style={{ textAlign: 'center' }}>
-      <h1>FEED Tree - React</h1>
+      <h2>FEED Tree - React</h2>
     </header>{' '}
       <div id="treeWrapper" style={{ width: '99vw', height: '100vh' }}>
         <Tree data={orgChart} orientation="vertical"
           renderCustomNodeElement={renderRectSvgNode}
-          rootNodeClassName="node__root"
-          branchNodeClassName="node__branch"
-          leafNodeClassName="node__leaf"
-          nodeSize={{ x: 80, y: 200 }}
-          translate={{ x: 1200, y: 200 }} />
+          nodeSize={{ x: 150, y: 200 }} />
       </div></>
   );
 };
